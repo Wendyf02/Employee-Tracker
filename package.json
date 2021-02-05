@@ -4,6 +4,7 @@
   "description": "* [Description](#description)   * [Installation](#installation)   * [Usage](#usage)   * [License](#license)   * [Contributors](#contributors)   * [Test](#test)   * [Questions](#questions)",
   "main": "app.js",
   "dependencies": {
+    "console.table": "^0.10.0",
     "inquirer": "^7.3.3",
     "mysql": "^2.18.1"
   },
