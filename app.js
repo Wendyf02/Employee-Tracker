@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
     user: "root",
   
     // Your password
-    password: "Liebeberlin",
+    password: "",
     database: "employee_trackerDB"
 });
 
@@ -57,8 +57,8 @@ connection.connect(function(err) {
     });
   }
 
+//-----Add Employee---//
 
-//-----
  function addEmployee() {
     var query = "SELECT * FROM role";
     var rolechoice = [];
@@ -73,7 +73,6 @@ connection.connect(function(err) {
 
       rolechoice.push(role)
     
-
     }
       inquirer.prompt([
 
@@ -88,4 +87,5 @@ connection.connect(function(err) {
   })
 
  } 
- addEmployee()
+
+//  addEmployee()
