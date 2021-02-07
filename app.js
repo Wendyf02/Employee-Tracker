@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
     user: "root",
   
     // Your password
-    password: "",
+    password: "Liebeberlin",
     database: "employee_trackerDB"
 });
 
@@ -34,7 +34,7 @@ function startPrompt() {
 
                "View All Deparments",
                "View All Role",
-               "View All Employees",
+               "View All Employee",
                "Add Department",
                "Add Role",
                "Add Employee",
@@ -79,7 +79,7 @@ function startPrompt() {
 
 //----View by Department----//
 
-  function viewDepartment() {
+  function viewAllDepartment() {
     var query = "SELECT * FROM department";
     connection.query(query, function(err, res) {
       console.table(res) 
@@ -90,14 +90,30 @@ function startPrompt() {
 
 //-----Select Role-----//
 
- function viewRole() {
+ function viewAllRole() {
     var query = "SELECT * FROM role";
     connection.query(query, function(err, res) {
       console.table(res) 
       
     });
   }
-// viewRole()
+
+// viewAllRole()
+
+
+//----view Employee----//
+
+function viewAllEmployee() {
+  var query = "SELECT * FROM employee";
+  connection.query(query, function(err, res) {
+    if (err) throw err;
+    console.log(res.length + "employee found!");
+    console.table("all employee:" ,res)
+    
+  });
+}
+
+// viewAllEmployee()
 
 
 //-----Add Employee---//
@@ -119,6 +135,19 @@ function startPrompt() {
     }
       inquirer.prompt([
 
+      {
+        name: "first_name",
+        type: "input",
+        meassage: "Employee first name:",
+      },
+
+      {
+        name: "last_name",
+        type: "input",
+        meassage: "Employee last name:",
+
+      },
+
       {   
           type: "list",
           name: "role",
@@ -131,4 +160,4 @@ function startPrompt() {
 
  } 
 
-//  addEmployee()
+ addEmployee()
