@@ -28,52 +28,54 @@ function startPrompt() {
 
     {
      type: "list",
-     message: "What would you like to do?",
+     message: "Welcome to our employee database! What would you like to do?",
      name: "choice",
      choices: [
+
+               "View All Deparments",
+               "View All Role",
                "View All Employees",
-               "View All Employee's by Role",
-               "View All Employees by Deparments",
-               "Update Employee",
-               "Add Employee",
+               "Add Department",
                "Add Role",
-               "Add Department"
+               "Add Employee",
+               "Add Department",
+               "EXIT"
+               
              ]
     }
 
 ]).then(function(answer) {
     switch (answer.action) {
 
-      case "View all Employee by Department":
+      case "View All Department":
            viewAllDepartment();
-
-      case "View All Employee by Role":
-           viewAllEmployeeRole();
-           
+           break;
+      case "View All Role":
+           viewAllRole();
+          break;
+      case "View All Employee":
+            viewAllEmployee();
+            break;
+      case  "Add Department":
+            addDepartment(); 
+            break;  
+      case   "Add Role":
+              addRole();        
+            break;
       case  "Add Employee":
             addEmployee();     
-       
-
-      case   "View All Employee":
-              viewAllEmployee();
-
-
-      case  "Updated Employee":
-               updateEmployee();
-      
-               
-      case    "Add Role":
-                 addRole();
-                 
-      case     "Add Department":
-                 addDepartment();           
-
+            break; 
+      case  "Add Department":
+            AddEmployee();            
+            break;
+      case   "EXIT":
+            endApp();
      }
  })
 
 
 }
-//  console.log(startPrompt)
+ console.log(startPrompt)
 
 //----View by Department----//
 
@@ -84,6 +86,7 @@ function startPrompt() {
       
     });
   }
+// viewDepartment()
 
 //-----Select Role-----//
 
@@ -94,6 +97,8 @@ function startPrompt() {
       
     });
   }
+// viewRole()
+
 
 //-----Add Employee---//
 
