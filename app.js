@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
     user: "root",
   
     // Your password
-    password: "Liebeberlin",
+    password: "",
     database: "employee_trackerDB"
 });
 
@@ -75,7 +75,7 @@ function startPrompt() {
 
 
 }
- console.log(startPrompt)
+//  console.log(startPrompt)
 
 //----View by Department----//
 
