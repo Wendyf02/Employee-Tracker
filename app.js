@@ -4,17 +4,13 @@ const mysql = require ("mysql");
 const cTable = require("console.table");
 
 const connection = mysql.createConnection({
+
     host: "localhost",
-  
-    // Your port; if not 3306
     port: 3306,
-  
-    // Your username
     user: "root",
-  
-    // Your password
-    password: "Liebeberlin",
+    password: "",
     database: "employee_trackerDB"
+
 });
 
 connection.connect(function(err) {
@@ -38,7 +34,7 @@ function startPrompt() {
                "Add Department",
                "Add Role",
                "Add Employee",
-               "Add Department",
+               "Update Employee",
                "EXIT"
                
              ]
@@ -66,7 +62,7 @@ function startPrompt() {
             addEmployee();     
             break; 
       case  "Add Department":
-            AddEmployee();            
+            UpdateEmployee();            
             break;
       case   "EXIT":
             endApp();
@@ -75,20 +71,20 @@ function startPrompt() {
 
 
 }
-//  console.log(startPrompt)
+// startPrompt()
 
-//----View by Department----//
+//------View by Department-------//
 
   function viewAllDepartment() {
     var query = "SELECT * FROM department";
     connection.query(query, function(err, res) {
       console.table(res) 
-      
+      // startPrompt()
     });
   }
 // viewDepartment()
 
-//-----Select Role-----//
+//--------View Role-------------//
 
  function viewAllRole() {
     var query = "SELECT * FROM role";
@@ -101,7 +97,7 @@ function startPrompt() {
 // viewAllRole()
 
 
-//----view Employee----//
+//------view Employee---------//
 
 function viewAllEmployee() {
   var query = "SELECT * FROM employee";
@@ -116,7 +112,39 @@ function viewAllEmployee() {
 // viewAllEmployee()
 
 
-//-----Add Employee---//
+//--------Add Department-------//
+
+function addDepartment() {
+
+  inquirer.prompt([
+        {
+           name: "new_dept",
+           type: "input",
+           message: "what Department would you like to add?"
+
+        }
+  ]).then(function  (answer) {
+        connection.query(
+           "INSERT INTO  department SET? ",
+           {
+             name: res.name.new_dept
+
+           },
+        );
+       var query = "SELECT * FROM department";
+       connection.query(query, function(err, res){
+          if (err)throw err;
+          console.table("ALL Department:" , res);
+        
+       })
+           
+  })
+
+}
+
+addDepartment()
+
+//-------Add Employee----------//
 
  function addEmployee() {
     var query = "SELECT * FROM role";
@@ -160,4 +188,4 @@ function viewAllEmployee() {
 
  } 
 
- addEmployee()
+//  addEmployee()
