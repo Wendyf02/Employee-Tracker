@@ -28,12 +28,12 @@ function startPrompt() {
      name: "choice",
      choices: [
 
+              "View All Employee",
                "View All Deparments",
                "View All Role",
-               "View All Employee",
+               "Add Employee",
                "Add Department",
                "Add Role",
-               "Add Employee",
                "Update Employee",
                "EXIT"
                
@@ -43,25 +43,26 @@ function startPrompt() {
 ]).then(function(answer) {
     switch (answer.action) {
 
+      case "View All Employee":
+        viewAllEmployee();
+        break; 
       case "View All Department":
            viewAllDepartment();
            break;
       case "View All Role":
            viewAllRole();
           break;
-      case "View All Employee":
-            viewAllEmployee();
-            break;
+     
+      case  "Add Employee":
+            addEmployee();     
+            break; 
       case  "Add Department":
             addDepartment(); 
             break;  
       case   "Add Role":
               addRole();        
             break;
-      case  "Add Employee":
-            addEmployee();     
-            break; 
-      case  "Add Department":
+      case  "UpdateEmployee":
             UpdateEmployee();            
             break;
       case   "EXIT":
@@ -72,6 +73,20 @@ function startPrompt() {
 
 }
 // startPrompt()
+
+//------view Employee---------//
+
+function viewAllEmployee() {
+  var query = "SELECT * FROM employee";
+  connection.query(query, function(err, res) {
+    if (err) throw err;
+    console.log(res.length + "employee found!");
+    console.table("all employee:" ,res)
+    
+  });
+}
+
+// viewAllEmployee()
 
 //------View by Department-------//
 
@@ -90,59 +105,13 @@ function startPrompt() {
     var query = "SELECT * FROM role";
     connection.query(query, function(err, res) {
       console.table(res) 
-      
+      // startPrompt()
     });
   }
 
 // viewAllRole()
 
 
-//------view Employee---------//
-
-function viewAllEmployee() {
-  var query = "SELECT * FROM employee";
-  connection.query(query, function(err, res) {
-    if (err) throw err;
-    console.log(res.length + "employee found!");
-    console.table("all employee:" ,res)
-    
-  });
-}
-
-// viewAllEmployee()
-
-
-//--------Add Department-------//
-
-function addDepartment() {
-
-  inquirer.prompt([
-        {
-           name: "new_dept",
-           type: "input",
-           message: "what Department would you like to add?"
-
-        }
-  ]).then(function  (answer) {
-        connection.query(
-           "INSERT INTO  department SET? ",
-           {
-             name: res.name.new_dept
-
-           },
-        );
-       var query = "SELECT * FROM department";
-       connection.query(query, function(err, res){
-          if (err)throw err;
-          console.table("ALL Department:" , res);
-        
-       })
-           
-  })
-
-}
-
-addDepartment()
 
 //-------Add Employee----------//
 
@@ -184,8 +153,44 @@ addDepartment()
       },
 
     ]).then(function (res) {console.log(res) })
+
+  
   })
 
  } 
 
 //  addEmployee()
+
+
+//--------Add Department-------//
+
+function addDepartment() {
+
+  inquirer.prompt([
+        {
+           name: "new_dept",
+           type: "input",
+           message: "what Department would you like to add?"
+
+        }
+  ]).then(function (answer) {
+        connection.query(
+           "INSERT INTO  department SET? ",
+           {
+             name: answer.new_dept
+           },
+        );
+       var query = "SELECT * FROM department";
+       connection.query(query, function(err, res){
+          if (err)throw err;
+          console.table("ALL Department:" , res);
+          // startPrompt()
+       })
+           
+  })
+
+}
+// console.log(answer)
+// addDepartment()
+
+//----------Add Role------------//
