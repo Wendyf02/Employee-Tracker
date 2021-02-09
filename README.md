@@ -46,6 +46,28 @@
   ## Questions
 
   Contact me:   
-  Github: https://github.com/wendyf02   
+  Github: https://github.com/Wendyf02  
   Email: cammomila444@gmail.com   
-  video:
+  video Link:
+
+
+Screenshot 
+
+    View All Employee   
+![GitHub](asset/ViewAllEmployee.png)
+
+    View All Dept   
+![GitHub](asset/ViewAllDept.png)
+
+    View All Role  
+![GitHub](asset/ViewAllRole.png)
+
+    Add Dept   
+![GitHub](asset/AddDept.png)
+
+    Add Role   
+![GitHub](asset/AddRole.png)
+
+    Add Employee  
+![GitHub](asset/AddEmployee.png)
+
