@@ -10,13 +10,25 @@
   * [Questions](#questions)
   
   ## Description
-  n/a
+  This app is to manage a company's employee using MySQL
+
+  As a business owner   
+  I want to be able to view and manage the departments, roles, and employees in my company   
+  So that I can organize and plan my business    
+
 
   ## Installation
-  n/a
+  Need to install the following;   
+  -npm install   
+  -npm install inquirer   
+  -npm install msql   
+  -npm install console.table    
+  Then using your terminal to execute app.js   
 
   ## Usage
-  n/a
+  Open your terminal and change to correspondiung directory.   
+  Run "node app.js" and you will be prompted  with option.    
+
 
   ## Lincense
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
@@ -25,10 +37,15 @@
   n/a
 
   ## Test
- n/a
+ * Add departments, roles, employees   
+
+  * View departments, roles, employees   
+
+  * Update employee roles  
   
   ## Questions
 
   Contact me:   
   Github: https://github.com/wendyf02   
-  Email: cammomila444@gmail.com
+  Email: cammomila444@gmail.com   
+  video:
