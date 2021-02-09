@@ -35,7 +35,6 @@ function startPrompt() {
         "Add Department",
         "Add Role",
         "Update Employee",
-        "EXIT"
 
       ]
     }
@@ -70,9 +69,7 @@ function startPrompt() {
       case "Update Employee":
         UpdateEmployee();
         break;
-
-      case "EXIT":
-        endApp();
+  
     }
   })
 
