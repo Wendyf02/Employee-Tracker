@@ -10,7 +10,7 @@
   * [Questions](#questions)
   
   ## Description
-  This app is to manage a company's employee using MySQL
+  This app is to manage a company's employee.
 
   As a business owner   
   I want to be able to view and manage the departments, roles, and employees in my company   
@@ -26,7 +26,7 @@
   Then using your terminal to execute app.js   
 
   ## Usage
-  Open your terminal and change to correspondiung directory.   
+  Open your terminal and change to corresponding directory.   
   Run "node app.js" and you will be prompted  with option.    
 
 
@@ -48,7 +48,7 @@
   Contact me:   
   Github: https://github.com/Wendyf02  
   Email: cammomila444@gmail.com   
-  video Link: https://drive.google.com/file/d/1fFbSbQkkdkHPVh8BeImh8sHrkIxgp-L4/view?usp=sharing
+  video Link: https://drive.google.com/file/d/1fFbSbQkkdkHPVh8BeImh8sHrkIxgp-L4/view?usp=sharing    
 
 
 Screenshot 
